@@ -17,15 +17,4 @@ class Simulation extends Simulation {
     .acceptLanguageHeader(acceptLanguage)
     .acceptEncodingHeader(acceptEncoding)
     .userAgentHeader(userAgent)
-
-  val globalAssertions: Seq[Assertion] = Seq(global.successfulRequests.percent gt 95)
-
-  setUp(
-    Scenario.scenario inject (constantUsersPerSec(3) during(5 seconds))
-  )
-    .protocols(httpConf)
-    .assertions(
-      globalAssertions ++
-      Scenario.assertions
-    )
 }
