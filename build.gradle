@@ -1,0 +1,19 @@
+plugins {
+    id 'com.github.lkishalmi.gatling' version '3.2.9'
+    id 'scala'
+}
+
+group 'com.mango'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.scala-lang:scala-library:2.12.8'
+}
+
+gatling {
+    logLevel = "ERROR"
+}
