@@ -3,7 +3,7 @@ package com.mango.configurations
 import scala.language.postfixOps
 
 object Configuration {
-  val baseUrl: String = "${HOSTNAME}"
+  val baseUrl: String = "http://stock.dev.mango.com"
   val accept: String = "application/json"
   val doNotTrack: String = "1"
   val acceptLanguage: String = "en-US,en;q=0.5"

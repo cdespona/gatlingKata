@@ -1,7 +1,7 @@
 package com.mango
 
 import com.mango.configurations.Configuration._
-import com.mango.scenarios.Scenario
+import com.mango.scenarios.StockScenario
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
@@ -9,7 +9,7 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-class Simulation extends Simulation {
+class StockSimulation extends Simulation {
   val httpConf: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
     .acceptHeader(accept)
@@ -21,11 +21,11 @@ class Simulation extends Simulation {
   val globalAssertions: Seq[Assertion] = Seq(global.successfulRequests.percent gt 95)
 
   setUp(
-    Scenario.scenario inject (constantUsersPerSec(3) during(5 seconds))
+    StockScenario.scenario inject (constantUsersPerSec(3) during(5 seconds))
   )
     .protocols(httpConf)
     .assertions(
       globalAssertions ++
-      Scenario.assertions
+      StockScenario.assertions
     )
 }
