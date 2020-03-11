@@ -11,6 +11,8 @@ It is important to remark that gatling uses [**Scala**](https://www.scala-lang.o
 
 [Gatling Documentation](https://gatling.io/docs/current/general/)
 
+[Gatling Cheat-sheet](https://gatling.io/docs/current/cheat-sheet)
+
 ## Gatling Gradle Plugin
 
 As there is no default gradle plugin for gatling the easiest one to plug in so far is the one created by [Laszlo Kishalmi](https://github.com/lkishalmi), 
