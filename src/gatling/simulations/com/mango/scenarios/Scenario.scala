@@ -11,7 +11,7 @@ import scala.language.postfixOps
 object Scenario {
 
   def scenario(): ScenarioBuilder =
-    ScenarioBuilder("Scenario Name")
+    ScenarioBuilder("Scenario Name") exec getOnOurEndpoint
 
   def assertions: Seq[Assertion] = {
     val path = details("Endpoint Name")
