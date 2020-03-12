@@ -31,5 +31,7 @@ object ValidationScenario {
       .queryParam("languageIso", "${language}")
       .check(status.is(OK.code()))
       .check(jsonPath("$..defaultCountryId").ofType[String])
-      .check(jsonPath("$..countryCodes"))
+      .check(jsonPath("$..defaultCountryId").is("${countryId}"))
+      .check(jsonPath("$..countryCodes").exists)
+      .check(jsonPath("$..countryCodes").notNull)
 }
